@@ -1,10 +1,20 @@
-import { Header } from './components/Header/Header'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { ThisDayPage } from './pages/ThisDay/ThisDayPage'
+import { SincePage } from './pages/Since/SincePage'
+import { ByDatePage } from './pages/ByDate/ByDatePage'
 
 function App() {
 
   return (
     <>
-      <Header />
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<ThisDayPage />} />
+          <Route path='/' element={<ThisDayPage />} />
+          <Route path='/since' element={<SincePage />} />
+          <Route path='/bydate' element={<ByDatePage />} />
+      </Routes>
+    </BrowserRouter >
     </>
   )
 }
